@@ -1,0 +1,36 @@
+
+#include "../inc/ScavTrap.hpp"
+
+
+ScavTrap::ScavTrap()
+{
+	#ifdef DEBUG
+	std::cout << "[ScavTrap] Dflt constructor called" << std::endl;
+	#endif
+
+	_health = 100;
+	_energy = 50;
+	_damagePts = 20;
+}
+
+ScavTrap::ScavTrap(const std::string& name) : ClapTrap(name) {
+	#ifdef DEBUG
+	std::cout << "[ScavTrap] Dflt constructor called" << std::endl;
+	#endif
+
+	_health = 100;
+	_energy = 50;
+	_damagePts = 20;
+}
+
+ScavTrap::ScavTrap(const ScavTrap& toCopy) : ClapTrap(toCopy) {
+	#ifdef DEBUG
+	std::cout << "[ScavTrap] Copy constructor called" << std::endl;
+	#endif
+}
+
+ScavTrap::~ScavTrap() {
+	#ifdef DEBUG
+	std::cout << "[ScavTrap] Destructor called" << std::endl;
+	#endif
+}
