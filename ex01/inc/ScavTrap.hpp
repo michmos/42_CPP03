@@ -12,7 +12,7 @@ public:
 	~ScavTrap();
 
 	void	attack(const std::string& target) override;
-	void	guardGate();
+	void	guardGate() const;
 };
 
 
