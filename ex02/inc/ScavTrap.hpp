@@ -11,6 +11,8 @@ public:
 	ScavTrap(const ScavTrap& scafTrap);
 	~ScavTrap();
 
+	ScavTrap& operator=(const ScavTrap& toAssign);
+
 	void	attack(const std::string& target) override;
 	void	guardGate() const;
 };

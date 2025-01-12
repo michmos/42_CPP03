@@ -25,6 +25,20 @@ int	main() {
 		ClapTrap	*ptr2 = new FragTrap("Pete");
 		delete ptr2;
 	}
+	std::cout << std::endl;
+	{
+		// assignmet operator
+		FragTrap	trap;
+		FragTrap	trap2("jon");
+
+		trap = trap2;
+		std::cout << std::endl;
+
+		ClapTrap	cTrap;
+		FragTrap	cTrap2("jon");
+
+		cTrap = cTrap2;
+	}
 
 	return (0);
 }

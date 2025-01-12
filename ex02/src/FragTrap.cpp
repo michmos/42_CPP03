@@ -35,6 +35,16 @@ FragTrap::~FragTrap() {
 	#endif
 }
 
+FragTrap& FragTrap::operator=(const FragTrap& toAssign) {
+	#ifdef DEBUG
+	std::cout << "[FragTrap] Assignment operator called" << std::endl;
+	#endif
+	if (this != &toAssign) {
+		ClapTrap::operator=(toAssign);
+	}
+	return (*this);
+}
+
 void	FragTrap::highFivesGuys() const {
 	std::cout << "[FragTrap] " << _name << " gives high five" << std::endl;
 }

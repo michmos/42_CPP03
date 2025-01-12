@@ -1,5 +1,6 @@
 
 #include "../inc/ScavTrap.hpp"
+#include <locale>
 
 
 ScavTrap::ScavTrap()
@@ -33,6 +34,16 @@ ScavTrap::~ScavTrap() {
 	#ifdef DEBUG
 	std::cout << "[ScavTrap] Destructor called" << std::endl;
 	#endif
+}
+
+ScavTrap& ScavTrap::operator=(const ScavTrap& toAssign) {
+	#ifdef DEBUG
+	std::cout << "[ScavTrap] Assignment operator called" << std::endl;
+	#endif
+	if (this != &toAssign) {
+		ClapTrap::operator=(toAssign);
+	}
+	return (*this);
 }
 
 void	ScavTrap::attack(const std::string& target) {

@@ -11,6 +11,8 @@ public:
 	FragTrap(const FragTrap& scafTrap);
 	~FragTrap();
 
+	FragTrap& operator=(const FragTrap& toAssing);
+
 	void	highFivesGuys() const;
 };
 

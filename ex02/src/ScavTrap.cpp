@@ -35,6 +35,16 @@ ScavTrap::~ScavTrap() {
 	#endif
 }
 
+ScavTrap& ScavTrap::operator=(const ScavTrap& toAssign) {
+	#ifdef DEBUG
+	std::cout << "[ScavTrap] Assignment operator called" << std::endl;
+	#endif
+	if (this != &toAssign) {
+		ClapTrap::operator=(toAssign);
+	}
+	return (*this);
+}
+
 void	ScavTrap::attack(const std::string& target) {
 	if (_energy == 0 || _health == 0)
 		return;
