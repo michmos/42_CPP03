@@ -1,20 +1,34 @@
 
 #include "../inc/ClapTrap.hpp"
+#include "../inc/ScavTrap.hpp"
 
 int	main() {
-	ClapTrap trap("Trip");
+	{
+		// guardGate function
+		ScavTrap	trap("Trip");
+		trap.guardGate();
 
-	trap.attack("target");
+		// virtual function
+		ClapTrap	*ptr = &trap;
+		ptr->attack("target");
 
-	trap.takeDamage(5);
-	trap.beRepaired(5);
+		// dying trap
+		ptr->takeDamage(50);
+		ptr->beRepaired(50);
 
-	trap.takeDamage(5);
-	trap.takeDamage(5);
+		ptr->takeDamage(50);
+		ptr->takeDamage(50);
 
-	trap.takeDamage(5);
-	trap.attack("target");
-	trap.beRepaired(5);
+		ptr->takeDamage(50);
+		ptr->attack("target");
+		ptr->beRepaired(50);
+	}
+	std::cout << std::endl;
+	{
+		// deleting polymorphic ptr
+		ClapTrap	*ptr2 = new ScavTrap("Pete");
+		delete ptr2;
+	}
 
 	return (0);
 }

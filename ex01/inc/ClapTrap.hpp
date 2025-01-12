@@ -18,11 +18,11 @@ public:
 	ClapTrap();
 	ClapTrap(const std::string &name);
 	ClapTrap(const ClapTrap& clapTrap);
-	~ClapTrap();
+	virtual ~ClapTrap();
 
 	ClapTrap&	operator=(const ClapTrap& clapTrap);
 
-	void	attack(const std::string& target);
+	virtual void	attack(const std::string& target);
 	void	takeDamage(unsigned int amnt);
 	void	beRepaired(unsigned int amnt);
 };
